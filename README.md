@@ -1,5 +1,6 @@
 # FastSMBConfEdit
 Small bash script, that makes edit samba config easier and faster.
+
 EU:
 Usage:
 Type ./smbfedit.sh and the script will open the config in the standard path (/etc/samba/smb.conf).
