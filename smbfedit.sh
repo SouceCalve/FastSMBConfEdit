@@ -31,7 +31,6 @@ echo "Это папка, а не файл.Пробую найти smb.conf"
 else
 smbcfile=$standartpath
 fi
-#echo $smbcfile
 echo "Останавливаем samba..."
 sudo service smbd stop
 echo "Остановлено."
