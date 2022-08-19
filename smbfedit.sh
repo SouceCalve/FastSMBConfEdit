@@ -1,11 +1,14 @@
 #!/bin/bash
 standartpath=/etc/samba/smb.conf
-sorig=$1
-if [ -f $sorig  ];
+#echo $1
+if [ -z $1 ]
+then
+smbcfile=$standartpath
+elif [ -f $1  ];
 then
 echo "Указан другой путь для конфига..."
 smbcfile=$1
-elif [ -d $sorig ]
+elif [ -d $1 ]
 then
 echo "Это папка, а не файл.Пробую найти smb.conf"
 	s=$1/smb.conf
@@ -28,9 +31,11 @@ echo "Это папка, а не файл.Пробую найти smb.conf"
 		fi
 	done
 	fi
-else
-smbcfile=$standartpath
+#elif [-z $1 ]
+#then
+#smbcfile=$standartpath
 fi
+echo $smbcfile
 echo "Останавливаем samba..."
 sudo service smbd stop
 echo "Остановлено."
